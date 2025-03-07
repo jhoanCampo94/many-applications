@@ -1,11 +1,12 @@
 import './App.css'
+import MenuApplicationsPage from './components/MenuApplicationPage/MenuApplicationsPage'
 
 function App() {
 
   return (
-    <div>
-      APP
-    </div>
+    <>
+      <MenuApplicationsPage />
+    </>
   )
 }
 
