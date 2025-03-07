@@ -4,7 +4,7 @@ interface IMenuApplicationsProps {
 
 const MenuApplications = ({ children }: IMenuApplicationsProps) => {
   return (
-    <div className="flex w-full min-h-screen bg-gray-100 items-center justify-center">
+    <div className="flex flex-row w-4/5 items-center justify-center gap-8">
       {children}
     </div>
   )

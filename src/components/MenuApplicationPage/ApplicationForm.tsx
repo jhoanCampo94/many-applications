@@ -3,12 +3,8 @@
 const ApplicationForm = () => {
   return (
     <form
-      className="w-full max-w-md p-6 bg-white rounded-2xl shadow-lg space-y-4"
+      className="w-full max-w-md p-6 bg-white rounded-2xl shadow-lg space-y-4 basis-1/3"
     >
-      <h2 className="text-xl font-semibold text-center text-[var(--color-primary)]">
-        Crear Aplicación
-      </h2>
-
       <div>
         <label
           htmlFor="title-application"
