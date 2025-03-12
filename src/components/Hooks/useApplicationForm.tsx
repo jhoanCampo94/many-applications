@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IApp } from "../MenuApplicationPage/MenuApplicationsPage";
 
-const useForm = (initialForm: IApp) => {
+const useApplicationForm = (initialForm: IApp) => {
   const [form, setForm] = useState<IApp>(initialForm);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,6 +13,7 @@ const useForm = (initialForm: IApp) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>, onSubmit: (form: IApp) => void) => {
     e.preventDefault();
+    if(form.title === "" || form.description === "") return;
     onSubmit(form);
     setForm(initialForm);
   };
@@ -25,4 +26,4 @@ const useForm = (initialForm: IApp) => {
 
 }
 
-export default useForm
+export default useApplicationForm

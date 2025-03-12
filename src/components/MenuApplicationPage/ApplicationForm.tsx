@@ -1,15 +1,16 @@
-import useForm from "../Hooks/useForm";
+import useApplicationForm from "../Hooks/useApplicationForm";
 import { IApp } from "./MenuApplicationsPage";
 
 
 const ApplicationForm = ({ addApp }: { addApp: (app: IApp) => void }) => {
 
   const initialForm = {
+    id: "",
     title: "",
     description: "",
   }
 
-  const [form, handleChange, handleSubmit] = useForm(initialForm);
+  const [form, handleChange, handleSubmit] = useApplicationForm(initialForm);
 
   return (
     <form
