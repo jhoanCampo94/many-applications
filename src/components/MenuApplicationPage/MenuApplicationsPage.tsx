@@ -1,8 +1,8 @@
-import { useState } from "react";
 import ApplicationForm from "./ApplicationForm"
 import ListApplications from "./ListApplications"
 import MenuApplications from "./MenuApplications"
 import { v4 as uuidv4 } from 'uuid';
+import { useLocalStorage } from "../Hooks/useLocalStorage";
 
 export interface IApp {
   id: string,
@@ -11,7 +11,7 @@ export interface IApp {
 }
 const MenuApplicationsPage = () => {
 
-  const [apps, setApps] = useState<IApp[]>([]);
+  const [apps, setApps] = useLocalStorage<IApp[]>("applications", []);
 
   const addApp = (app: IApp) => {
     const newApp = {

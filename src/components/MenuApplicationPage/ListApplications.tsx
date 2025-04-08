@@ -8,7 +8,7 @@ export interface IListApplicationsProps {
 
 const ListApplications = ({ apps, deleteApp }: IListApplicationsProps) => {
   return (
-    <div className='flex flex-wrap justify-center gap-4 w-full lg: h-auto bg-white rounded-2xl shadow-lg p-8 basis-2/3'>
+    <div className='flex flex-wrap justify-center gap-4 w-full lg: h-[700px] bg-white rounded-2xl shadow-lg p-8 basis-2/3 overflow-auto'>
       {
         apps.length === 0 ? (
           <p className="text-2xl font-semibold text-gray-600">
