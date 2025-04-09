@@ -3,6 +3,8 @@ import ListApplications from "./ListApplications"
 import MenuApplications from "./MenuApplications"
 import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from "../Hooks/useLocalStorage";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import ApplicationDetail from "./ApplicationDetail";
 
 export interface IApp {
   id: string,
@@ -28,15 +30,29 @@ const MenuApplicationsPage = () => {
   };
 
   return (
-    <div className=" flex justify-center w-full min-h-screen bg-general-fund">
-      <MenuApplications >
-        <ApplicationForm addApp={addApp} />
-        <ListApplications
-          apps={apps}
-          deleteApp={deleteApp}
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className=" flex justify-center w-full min-h-screen bg-general-fund">
+              <MenuApplications >
+                <ApplicationForm addApp={addApp} />
+                <ListApplications
+                  apps={apps}
+                  deleteApp={deleteApp}
+                />
+              </MenuApplications>
+            </div>
+          }
         />
-      </MenuApplications>
-    </div>
+
+        <Route
+          path="/application/:title"
+          element={<ApplicationDetail apps={apps} />}
+        />
+      </Routes>
+    </Router>
   )
 }
 
