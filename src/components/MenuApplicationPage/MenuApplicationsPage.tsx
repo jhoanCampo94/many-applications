@@ -4,7 +4,7 @@ import MenuApplications from "./MenuApplications"
 import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from "../Hooks/useLocalStorage";
 import { Route, Routes } from "react-router-dom";
-import ApplicationDetail from "./ApplicationDetail";
+import ApplicationDetail from "../../pages/ApplicationDetail";
 
 export interface IApp {
   id: string,
@@ -13,7 +13,7 @@ export interface IApp {
 }
 const MenuApplicationsPage = () => {
 
-  const [apps, setApps] = useLocalStorage<IApp[]>("applications", []);
+  const [apps, setApps] = useLocalStorage<IApp[]>("apps", []);
 
   const addApp = (app: IApp) => {
     const newApp = {
@@ -47,8 +47,8 @@ const MenuApplicationsPage = () => {
       />
 
       <Route
-        path="/application/:title"
-        element={<ApplicationDetail apps={apps} />}
+        path="/application/:id"
+        element={<ApplicationDetail />}
       />
     </Routes>
   )

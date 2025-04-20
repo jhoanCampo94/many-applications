@@ -38,7 +38,7 @@ const Application = ({ app, deleteApp }: IApplicationProps) => {
       <div className="absolute top-2 right-2 cursor-pointer" onClick={handleDelete}>
         <Delete />
       </div>
-      <Link to={`/application/${app.title.replace(/\s+/g, '-')}`} className="hover:text-[var(--color-primary)]">
+      <Link to={`/application/${app.title.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[var(--color-primary)]">
         <h3>{app.title}</h3>
       </Link>
       <p className="text-gray-600">{app.description}</p>
