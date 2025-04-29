@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Delete from "../Icons/Delete"
+import Trash from "../Icons/Trash"
 import { IApp } from "./MenuApplicationsPage"
 import ModalDeleteApp from "../Modals/ModalDeleteApp";
 import { Link } from "react-router-dom";
@@ -36,7 +36,7 @@ const Application = ({ app, deleteApp }: IApplicationProps) => {
         )
       }
       <div className="absolute top-2 right-2 cursor-pointer" onClick={handleDelete}>
-        <Delete />
+        <Trash />
       </div>
       <Link to={`/application/${app.title.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[var(--color-primary)]">
         <h3>{app.title}</h3>
