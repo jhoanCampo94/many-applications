@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import Calculator from "./Calculator/Calculator"
 import NotFoundApp from "./NotFoundApp";
+import ApiRickAndMorthy from "./FreeApis/ApiRickAndMorthy";
 
 const componentMap: Record<string, React.FC> = {
   "calculadora": Calculator,
+  "api-de-rick-and-morthy": ApiRickAndMorthy,
 }
 const ApplicationDetail = () => {
   const { id } = useParams<{ id: string }>();
