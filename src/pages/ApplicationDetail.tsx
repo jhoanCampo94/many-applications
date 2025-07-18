@@ -3,11 +3,13 @@ import Calculator from "./Calculator/Calculator"
 import NotFoundApp from "./NotFoundApp";
 import ApiRickAndMorthy from "./FreeApis/ApiRickAndMorthy";
 import CounterClick from "./CounterClick/CounterClick";
+import DiscoverWord from "./DiscoverWord/DiscoverWord";
 
 const componentMap: Record<string, React.FC> = {
   "calculadora": Calculator,
   "api-de-rick-and-morthy": ApiRickAndMorthy,
   "contador-de-clicks": CounterClick,
+  "descubre-la-palabra": DiscoverWord,
 }
 const ApplicationDetail = () => {
   const { id } = useParams<{ id: string }>();
