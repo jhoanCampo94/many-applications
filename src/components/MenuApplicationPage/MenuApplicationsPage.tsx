@@ -10,16 +10,19 @@ export interface IApp {
   id: string,
   title: string,
   description: string,
+  slug: string,
 }
 const MenuApplicationsPage = () => {
 
   const [apps, setApps] = useLocalStorage<IApp[]>("apps", []);
 
   const addApp = (app: IApp) => {
+    const slug = app.title.toLowerCase().trim().replace(/\s+/g, '-');
     const newApp = {
       id: uuidv4(),
       title: app.title,
-      description: app.description
+      description: app.description,
+      slug
     }
     setApps((prevApps) => [...prevApps, newApp]);
   };

@@ -8,6 +8,7 @@ const ApplicationForm = ({ addApp }: { addApp: (app: IApp) => void }) => {
     id: "",
     title: "",
     description: "",
+    slug: "",
   }
 
   const [form, handleChange, handleSubmit] = useApplicationForm(initialForm);
